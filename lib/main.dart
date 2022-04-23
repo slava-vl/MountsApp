@@ -1,7 +1,8 @@
-import 'package:codelab_1/mounts_app.dart';
 import 'package:flutter/material.dart';
 
-import 'splash_page.dart';
+import 'screens/details_page.dart';
+import 'screens/splash_page.dart';
+import 'screens/mounts_app.dart';
 
 const Color mainColor = Color(0xFFFF5656);
 
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: MountsApp(),
+      home: SplashPage(),
     );
   }
 }

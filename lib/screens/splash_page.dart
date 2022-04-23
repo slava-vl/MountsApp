@@ -1,12 +1,12 @@
-import 'package:codelab_1/mounts_app.dart';
+import 'package:codelab_1/screens/mounts_app.dart';
 import 'package:flutter/material.dart';
 
-import 'main.dart';
+import '../main.dart';
 
 class SplashPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Future.delayed(const Duration(seconds: 10), () {
+    Future.delayed(const Duration(seconds: 3), () {
       Navigator.of(context).push(
         MaterialPageRoute(
           builder: (context) => MountsApp(),

@@ -1,11 +1,11 @@
 import 'package:codelab_1/main.dart';
 import 'package:flutter/material.dart';
 
-import 'widgets/app_bottom_bar.dart';
-import 'widgets/app_category_list.dart';
-import 'widgets/app_header.dart';
-import 'widgets/app_mount_list_view.dart';
-import 'widgets/app_search.dart';
+import '../widgets/app_bottom_bar.dart';
+import '../widgets/app_category_list.dart';
+import '../widgets/app_header.dart';
+import '../widgets/app_mount_list_view.dart';
+import '../widgets/app_search.dart';
 
 class MountsApp extends StatelessWidget {
   const MountsApp({Key? key}) : super(key: key);

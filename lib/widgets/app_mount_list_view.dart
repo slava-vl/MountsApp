@@ -1,6 +1,8 @@
 import 'package:codelab_1/dummy_data.dart';
 import 'package:flutter/material.dart';
 
+import '../screens/details_page.dart';
+
 class AppMountListView extends StatelessWidget {
   const AppMountListView({Key? key}) : super(key: key);
 
@@ -12,36 +14,42 @@ class AppMountListView extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemCount: mountItems.length,
         itemBuilder: (context, index) {
-          return Container(
-            alignment: Alignment.bottomLeft,
-            padding: EdgeInsets.all(20),
-            margin: EdgeInsets.all(10),
-            width: 150,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(15),
-              image: DecorationImage(
-                image: NetworkImage(mountItems[index].path),
-                fit: BoxFit.cover,
+          return GestureDetector(
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => DetailsPage(mountItems[index])));
+            },
+            child: Container(
+              alignment: Alignment.bottomLeft,
+              padding: EdgeInsets.all(20),
+              margin: EdgeInsets.all(10),
+              width: 150,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(15),
+                image: DecorationImage(
+                  image: NetworkImage(mountItems[index].path),
+                  fit: BoxFit.cover,
+                ),
               ),
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  mountItems[index].name,
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    mountItems[index].name,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                ),
-                Text(
-                  mountItems[index].location,
-                  style: TextStyle(
-                    color: Colors.white,
+                  Text(
+                    mountItems[index].location,
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           );
         },
